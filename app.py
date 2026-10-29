@@ -2,17 +2,22 @@ string = input("Inserisci una stringa: ")
 string += "$"
 print(string)
 
-for i in range (len(string)):
-    rotazioni = testo[i:] + testo[:i]
+rotazioni = []
 
-n = len(string)
+for i in range (len(string)):
+    rotazione = string[i:] + string[:i]
+    rotazioni.append(rotazione)
+
+print(rotazioni)
+
+n = len(rotazioni)
 temp = ""
 for i in range(n):
     for j in range(0, n-i-1):
-        if(string[j] > string[j+1]):
-            temp = string[j]
-            string[j] = string[j+1]
-            string[j+1] = temp
+        if rotazioni[j] > rotazioni[j+1]:
+            temp = rotazioni[j]
+            rotazioni[j] = rotazioni[j+1]
+            rotazioni[j+1] = temp
 
 
 
